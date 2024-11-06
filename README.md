@@ -85,4 +85,4 @@ https://www.figma.com/design/TXJFeLDeOhM4XtL5F8M2Xh/UI-Website---Donasi-Palestin
 ---
 
 > ### Catatan:
-> Untuk lebih memahami dan menjalankan proyek ini, pastikan Anda memiliki pemahaman dasar tentang PHP, Bootstrap, serta integrasi database dan API pembayaran.
+> Project ini dibuat dan di kembangkan oleh Ackmad Elfan Purnama Dan Firza Inayah
