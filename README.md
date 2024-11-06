@@ -1,4 +1,4 @@
-# SELAMAT DATANG DI PROJECT Elfan ♡ Inoy
+# SELAMAT DATANG DI PROJECT Elfan & Inoy
 Membuat Website Berbasis Bootstraps dan PHP
 
 
