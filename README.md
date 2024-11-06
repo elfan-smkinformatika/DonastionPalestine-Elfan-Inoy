@@ -1,6 +1,9 @@
 # SELAMAT DATANG DI PROJECT Elfan & Inoy
 **Membuat Website Berbasis Bootstrap dan PHP**
 
+## Link Untuk Design UI
+https://www.figma.com/design/TXJFeLDeOhM4XtL5F8M2Xh/UI-Website---Donasi-Palestine?node-id=1-2&t=4nCjd5XYqjws6qx4-1
+
 ## Panduan Lebih Lanjut
 
 ### Alur Kerja Website Donasi untuk Palestina
