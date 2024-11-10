@@ -26,7 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#tentang">Tentang Kami</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link" href="#donasi">Program Donasi</a>
                     </li>
                     <li class="nav-item">
@@ -51,9 +51,21 @@
 
     <!-- Start Tentang Kami -->
     <div id="tentang-kami">
-        <div class="container py-5">
+        <div class="container py-5 position-relative">
+            <!-- pop laporan -->
+            <div class="pop-laporan text-light rounded-3 p-4 position-absolute end-0">
+                <h1 class="tagline-laporan">Dukungan Anda Telah Terkumpul untuk Palestina!</h1>
+                <p>Bersama, kita kuat. Setiap kontribusi Anda membawa harapan.</p>
+                <div class="line-statistic">
+                    <div class="d-flex justify-content-around">
+                        <p class="text-start">200.000.000</p>
+                        <p class="text-end">1.000.000.000</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end pop laporan -->
             <h4 class="title-page mb-5">Tentang Kami</h4>
-            <div class="d-flex">
+            <div class="d-flex d-">
                 <img src="assets/image/about-gaza.png" width="400px" class="me-4 rounded">
                 <div class="content-tentang">
                     <h3 class="title-tentang">Bersama untuk Palestina: Memberi Harapan di Tengah Krisis</h3>
@@ -69,33 +81,145 @@
         <div class="container">
             <h4 class="title-page mb-5">Program Donasi</h4>
             <!-- Card -->
-             <div class="d-flex justify-content-center">
-                 <div class="card d-flex ">
-                     <img src="assets/image/gaza-pendidikan.png" alt="" width="300px">
-                     <h1 class="title-card my-3">Bantuan Pangan dan Gizi</h1>
-                     <p class="parag-card">Program ini bertujuan untuk menyediakan makanan pokok dan nutrisi bagi keluarga yang terkena dampak konflik. Dengan akses pangan yang terbatas, banyak keluarga di Palestina mengalami krisis kelaparan dan kekurangan gizi, terutama anak-anak dan lansia.</p>
-                 </div>
-                 <div class="card d-flex ">
-                     <img src="assets/image/gaza-pendidikan.png" alt="" width="300px">
-                     <h1 class="title-card my-3">Bantuan Pangan dan Gizi</h1>
-                     <p class="parag-card">Program ini bertujuan untuk menyediakan makanan pokok dan nutrisi bagi keluarga yang terkena dampak konflik. Dengan akses pangan yang terbatas, banyak keluarga di Palestina mengalami krisis kelaparan dan kekurangan gizi, terutama anak-anak dan lansia.</p>
-                 </div>
-                 <div class="card d-flex ">
-                     <img src="assets/image/gaza-pendidikan.png" alt="" width="300px">
-                     <h1 class="title-card my-3">Bantuan Pangan dan Gizi</h1>
-                     <p class="parag-card">Program ini bertujuan untuk menyediakan makanan pokok dan nutrisi bagi keluarga yang terkena dampak konflik. Dengan akses pangan yang terbatas, banyak keluarga di Palestina mengalami krisis kelaparan dan kekurangan gizi, terutama anak-anak dan lansia.</p>
-                 </div>
-                 <div class="card d-flex ">
-                     <img src="assets/image/gaza-pendidikan.png" alt="" width="300px">
-                     <h1 class="title-card my-3">Bantuan Pangan dan Gizi</h1>
-                     <p class="parag-card">Program ini bertujuan untuk menyediakan makanan pokok dan nutrisi bagi keluarga yang terkena dampak konflik. Dengan akses pangan yang terbatas, banyak keluarga di Palestina mengalami krisis kelaparan dan kekurangan gizi, terutama anak-anak dan lansia.</p>
-                 </div>
-             </div>
+            <div class="d-flex justify-content-center flex-wrap">
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="assets/image/gaza-berbagimakanan.png" class="card-img-top rounded" alt="Bantuan Pangan dan Gizi" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Bantuan Pangan dan Gizi</h5>
+                        <p class="card-text">Program ini bertujuan untuk menyediakan makanan pokok dan nutrisi bagi keluarga yang terkena dampak konflik. Dengan akses pangan yang terbatas, banyak keluarga di Palestina mengalami krisis kelaparan dan kekurangan gizi, terutama anak-anak dan lansia.</p>
+                    </div>
+                </div>
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="assets/image/gaza-kesehatan.png" class="card-img-top rounded" alt="Layanan Kesehatan dan Medis" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Layanan Kesehatan dan Medis</h5>
+                        <p class="card-text">Krisis kemanusiaan di Palestina telah menyebabkan banyak warga kesulitan mendapatkan layanan kesehatan. Program ini berfokus pada penyediaan obat-obatan, perawatan medis, serta alat bantu kesehatan bagi mereka yang terdampak.</p>
+                    </div>
+                </div>
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="assets/image/gaza-pendidikan.png" class="card-img-top rounded" alt="Pendidikan dan Masa Depan Anak-Anak" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pendidikan dan Masa Depan Anak-Anak</h5>
+                        <p class="card-text">Konflik berkepanjangan di Palestina membuat anak-anak sering kehilangan akses pendidikan yang layak. Program ini berfokus pada pemberian dukungan untuk pendidikan, termasuk perlengkapan sekolah dan beasiswa bagi anak-anak yang kurang mampu.</p>
+                    </div>
+                </div>
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="assets/image/gaza-crisiAir.png" class="card-img-top rounded" alt="Program Pembangunan Infrastruktur Air dan Sanitasi" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Program Pembangunan Infrastruktur Air dan Sanitasi</h5>
+                        <p class="card-text">Banyak warga Palestina kesulitan mendapatkan akses ke air bersih dan fasilitas sanitasi yang memadai. Program ini berfokus pada penyediaan air bersih dan pembangunan infrastruktur sanitasi untuk meningkatkan kualitas kesehatan masyarakat.</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
-    </div>    
+    </div>
     <!-- End Donasi -->
 
+    <!-- Start Donasi Diterima -->
+    <div id="donasi-diterima">
+        <div class="container">
+            <h1 class="title-page">Donasi yang Diterima</h1>
+        </div>
+        <div class="container-cards">
+        <!-- Start Cards Scroll 1 -->
+            <!-- Start Donatur1 -->
+             <div class="cards-slide">
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+                 <div class="card-donatur m-2">
+                     <div class="name_no-donatur d-flex">
+                         <p class="no-donatur">1</p>
+                         <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
+                     </div>
+                     <div class="count_msg">
+                         <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
+                         <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
+                     </div>
+                 </div>
+             </div>
+            <!-- End Donatur1 -->
+        </div>
+    </div>
+    <!-- End Donasi Diterima -->
 
     <!-- Script -->
     <script src="assets/js/bootstrap.min.js"></script>
