@@ -127,4 +127,188 @@ hr{
     font-style: normal;
     padding: 10px;
     width: 90%;
+    color: #666;
 }
+
+/* Donasi Yang Diterima */
+
+.card-donatur{
+    width: 350px;
+    position: relative;
+}
+
+
+.name_no-donatur{
+    width: 100%;
+    background-color: #383838;
+    border-radius: 10px;
+    align-items: center;
+    color: #fff;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+
+.no-donatur{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    position: relative;
+    left: 10px;
+    top: -20px;
+    background-color: #636363;
+    font-size: 25px;
+    font-family: "Alfa Slab One", serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.name-donatur{
+    font-size: 15px;
+    margin-left: 10px;
+    font-family: "Alfa Slab One", serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.count_msg{
+    background-color: #383838;
+    padding: 15px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.count-donatur{
+    font-size: 20px;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.msg-donatur{
+    font-size: 15px;
+}
+
+
+/* Animasi : Infinite Scroll */
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.container-cards{
+    overflow: hidden;
+    display: flex;
+    margin: 30px 0;
+    padding-top: 30px;
+    justify-content: start;
+}
+
+.container-cards:hover .cards-slide{
+    animation-play-state: paused;
+}
+
+
+.cards-slide{
+    display: flex;
+    align-items: center;
+    animation: infiniteScroll 20s infinite linear;
+    justify-content: center;
+}
+
+/* Start Footer */
+
+#footer{
+    height: 30vh;
+    background-color: #FC6D10;
+    margin-top: 300px;
+    padding: 50px;
+    color: #fff !important;
+}
+
+.image-owner{
+
+}
+
+.navbar-footer{
+    width: 200px;
+    margin: 0 100px;
+}
+
+.navbar-footer li{
+    font-size: 20px;
+    list-style: none;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.navbar-footer li:hover{
+    margin-left: 20px;
+    transition: all ease 0.5s;
+}
+
+.contact-footer li{
+    list-style: none;
+    font-size: 20px;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.contact-footer li:hover{
+    margin-left: 20px;
+    transition: all ease 0.5s;
+}
+
+/* End Footer */
+
+
+/* Start Page Donasi */
+#page_donate{
+    background-image: url("../image/bg-donate.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.form-donasi{
+    padding: 30px;
+    height: 90vh;
+    width: 500px;
+    background-color: #383838;
+    border-radius: 15px;
+}
+
+.title-formdonate{
+    font-family: "Alfa Slab One", serif;
+    font-size: 30px;
+}
+
+.parag-formdonate{
+    font-size: 15px;    
+}
+
+.inputan{
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #282828;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* End Page Donasi */
