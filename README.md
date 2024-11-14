@@ -86,3 +86,10 @@ https://www.figma.com/design/TXJFeLDeOhM4XtL5F8M2Xh/UI-Website---Donasi-Palestin
 
 > ### Catatan:
 > Project ini dibuat dan di kembangkan oleh Ackmad Elfan Purnama Dan Firza Inayah
+
+---
+#### Tips github
+1. git config --global user.name "elfan-smkinformatika" //untuk memperkenalkan diri
+2. git add . //menSelect semua file yang akan di rubah
+3. git commit -m "telah memperbarui" //untuk menyampaikan pesan perubahan
+4. git push origin main //untuk mengirim perubahan ke github, menggunakan main karena origin di githubnya "main"
