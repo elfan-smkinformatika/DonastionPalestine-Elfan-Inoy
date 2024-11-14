@@ -271,3 +271,44 @@ hr{
 }
 
 /* End Footer */
+
+
+/* Start Page Donasi */
+#page_donate{
+    background-image: url("../image/bg-donate.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.form-donasi{
+    padding: 30px;
+    height: 90vh;
+    width: 500px;
+    background-color: #383838;
+    border-radius: 15px;
+}
+
+.title-formdonate{
+    font-family: "Alfa Slab One", serif;
+    font-size: 30px;
+}
+
+.parag-formdonate{
+    font-size: 15px;    
+}
+
+.inputan{
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #282828;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* End Page Donasi */
