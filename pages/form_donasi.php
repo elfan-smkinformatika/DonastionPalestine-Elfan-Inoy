@@ -11,7 +11,7 @@
 
 <body class="d-flex">
 
-    <div class="side-left col-7">
+    <div class="side-left col-7 p-5">
         <h1>Bersama Kita Bantu Palestina, Setiap Donasi Adalah Cahaya Harapan</h1>
         <div class="input-nominal">
             <label>Jumlah donasi anda</label><br>
@@ -31,12 +31,11 @@
                 <input type="radio" id="lainnya" name="amount" value="Lainnya" onclick="toggleManualInput(true)">
                 <label for="lainnya">Lainnya</label>
             </div>
-
-            <!-- Manual input field -->
-            <div id="manual-input-container">
-                <input type="number" id="manual-input" placeholder="Masukkan nominal lain">
+            <div id="manual-input-container" class="mt-2">
+                <input type="number" id="manual-input" placeholder="Masukkan nominal yang ingin Anda berikan" class="w-75">
             </div>
         </div>
+
     </div>
     <div class="side-right col-5">
 
