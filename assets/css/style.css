@@ -308,3 +308,54 @@ hr{
 }
 
 /* End Page Donasi */
+
+/* Start Form Donasi */
+
+.side-left{
+    height: 100vh;
+    background-color: #666;
+}
+
+.side-right{
+    height: 100vh;
+    background-color: cornsilk;
+}
+.radio-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Hide the default radio button */
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+/* Style each label as button */
+.radio-container label {
+    padding: 10px 20px;
+    border: 2px solid #f26722;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for selected radio button */
+.radio-container input[type="radio"]:checked + label {
+    background-color: #f26722;
+    color: white;
+}
+
+/* Styling for the manual input field */
+#manual-input {
+    display: none;
+    padding: 10px;
+    border: 2px solid #f26722;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* End Form Donasi */
