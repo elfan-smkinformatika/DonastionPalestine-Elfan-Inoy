@@ -308,3 +308,149 @@ hr{
 }
 
 /* End Page Donasi */
+
+/* Start Form Donasi */
+
+.side-left{
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.side-right{
+    height: 100vh;
+    background-image: url("../image/bg-donate.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.radio-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.radio-container input[type="radio"] {
+    display: none;
+}
+
+.radio-container label {
+    padding: 10px 20px;
+    border: 2px solid #f26722;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.radio-container input[type="radio"]:checked + label {
+    background-color: #f26722;
+    color: white;
+}
+
+#manual-input {
+    display: none;
+    padding: 10px;
+    border: 2px solid #bcbcbc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#manual-input:focus{
+    border: 2px solid #f5a67e;
+    outline: #f26722;
+}
+
+.input-text ,textarea{
+    padding: 10px;
+    border: 2px solid #bcbcbc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: #f26722;
+    font-weight: 500;
+}
+.input-text:focus ,textarea:focus{
+    border: 2px solid #ffc5a8;
+    outline: #f26722;
+}
+
+.input-text:not(:placeholder-shown), textarea:not(:placeholder-shown) {
+    border: 2px solid #FC6D10;
+}
+
+.title-form-donasi{
+    font-family: "Alfa Slab One", serif;
+    font-size: 30px;
+    color: #FC6D10;
+}
+
+.nominasi-text{
+    font-family: "Alfa Slab One", serif;
+}
+
+label{
+    font-weight: 500;
+}
+
+::placeholder{
+    font-style: italic;
+    font-family: "Alegreya", serif;
+    font-size: 12px;
+}
+
+.btn-donasi_sekarang{
+    padding: 10px 20px;
+    font-family: "Kaushan Script", serif;
+}
+
+/* End Form Donasi */
+
+.popup {
+    display: none; /* Sembunyikan pop-up secara default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar pop-up */
+    max-width: 500px; /* Lebar maksimum pop-up */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.simple-message{
+    width: 360px;
+    padding: 10px;
+    background-color: #FC6D10;
+}
+
+.title-simple-message{
+    font-size: 15px;
+}
+
+.parag-simple-message{
+    font-size: 10px;
+}
