@@ -30,16 +30,14 @@
             $_SESSION["name"] = $dataName;
             $_SESSION["jabatan"] = $dataJabatan;
 
-            header('Location: ../admin.php');
+            header('location: ../admin.php');
         }else {
             echo "Login Gagal, coba masukan username dan passwod yang benar";
-            // header('Location: ../admin.php');
+            header("Location: ../pages/login_admin.php?msg=login_gagal");
             
         }
-
-
-
-
-
+    }else {
+        // Jika Data Salah
+        header("Location: ../pages/login_admin.php?msg=login_gagal");
     }
 ?>

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alfa+Slab+One&family=Karla:ital,wght@0,200..800;1,200..800&family=Kaushan+Script&display=swap');
+
+*{
+    font-family: "Karla", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    scroll-behavior: smooth;
+
+}
+
+
+.nav-side{
+    height: 100vh;
+    padding: 10px 20px;
+}
+
+.main-side{
+    height: 100vh;
+    padding: 40px;
+    background-color: #F8F8FA;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+.nav-menus{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.nav-menus li{
+    padding: 15px 20px;
+    border-radius: 100px;
+    display: flex;
+    transition: all ease-in-out .4s;
+}
+
+.nav-menus li:hover{
+    background-color: #ffffff5e;
+    cursor: pointer;
+}
+
+.nav-menus li a{
+    border-radius: 20px;
+    display: flex;
+    width: 100%;
+    display: flex;
+}
+
+.card-dashboard{
+    width: 30%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: all ease .5s;
+    cursor: default;
+}
+
+.card-dashboard:hover{
+    background-color: #FFD249;   
+}
+
+.chart{
+    border-radius: 20px;
+    width: 60%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.program-donasi{
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    height: 600px;
+    border-radius: 20px;
+}
+
+.img-program{
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+    background-color: #FFD249;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.title-program{
+    font-size: 15px;
+}
+
+.status{
+    font-size: 13px;
+}
+
+.title-card-dashboard{
+
+}
+@keyframes fadeInUnique {
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    animation: fadeInUnique 1s ease-in-out;
+}
+.table thead {
+    background-color: #909090;
+    color: white;
+}
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+.table tbody tr {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInLeft 5s forwards; /* Ubah durasi menjadi 1 detik */
+}
+
+.table tbody tr:nth-child(even) {
+    transform: translateX(100%);
+    animation: slideInRight 5s forwards; /* Ubah durasi menjadi 1 detik */
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.table tbody tr:hover {
+    background-color: #ddd;
+}
