@@ -57,9 +57,9 @@
                 <h1 class="tagline-laporan">Dukungan Anda Telah Terkumpul untuk Palestina!</h1>
                 <p>Bersama, kita kuat. Setiap kontribusi Anda membawa harapan.</p>
                 <div class="line-statistic">
-                    <div class="d-flex justify-content-around">
-                        <p class="text-start">200.000.000</p>
-                        <p class="text-end">1.000.000.000</p>
+                    <span class="progress-text">Rp. 2.000.000 / Rp. 10.000.000</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
                     </div>
                 </div>
             </div>

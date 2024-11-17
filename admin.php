@@ -1,4 +1,5 @@
 <?php
+require_once "include/connection.php";
 session_start();
 if (!isset($_SESSION['username'])) {
     header("location: pages/login_admin.php");
@@ -8,6 +9,7 @@ $id = $_SESSION["id_admin"];
 $username = $_SESSION["username"];
 $name = $_SESSION["name"];
 $jabatan = $_SESSION["jabatan"];
+
 
 ?>
 
@@ -20,6 +22,11 @@ $jabatan = $_SESSION["jabatan"];
     <title>ADMIN | Selamat datang </title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style-admin.css">
+    <style>
+        .table tbody tr {
+            cursor: default;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,7 +40,7 @@ $jabatan = $_SESSION["jabatan"];
                         <h5 class="text-light"><?= $name ?></h5>
                     </div>
                 </div>
-                <ul class="nav-menus d-flex justify-content-center  flex-column">
+                <ul class="nav-menus d-flex justify-content-center gap-3 flex-column">
                     <li class="d-flex "><a class="d-flex text-light text-decoration-none" href="?page=dashboard"><img src="" alt="">Dashboard</a></li>
                     <li class="d-flex "><a class="d-flex text-light text-decoration-none" href="?page=donasi"><img src="" alt="">Donasi</a></li>
                     <li class="d-flex "><a class="d-flex text-light text-decoration-none" href="?page=donatur"><img src="" alt="">Donatur</a></li>
@@ -62,7 +69,7 @@ $jabatan = $_SESSION["jabatan"];
                         require_once 'pages/page_donatur.php';
                         break;
                     case 'kampanye-donatur':
-                        require_once 'pages/page_kampanye-donatur.php';
+                        require_once 'pages/page_program-donatur.php';
                         break;
                     case 'metode-pembayaran':
                         require_once 'pages/page_metode-pembayaran.php';

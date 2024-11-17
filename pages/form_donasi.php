@@ -14,54 +14,84 @@
     <div class="side-left col-7 p-5">
         <h1 class="title-form-donasi">Bersama Kita Bantu Palestina, Setiap Donasi Adalah Cahaya Harapan</h1>
         <div class="input-nominal my-4">
-            <form action="" method="post">
+            <form action="../query/proses_donasi.php" method="POST">
                 <label>Jumlah donasi anda</label><br>
                 <div class="radio-container">
-                    <input type="radio" id="10k" name="amount" value="10000" onclick="document.getElementById('manual-input').value = this.value" required>
+                    <input type="radio" id="10k" name="nominal" value="10000" onclick="document.getElementById('manual-input').value = this.value" required>
                     <label for="10k" class="nominasi-text">10K</label>
 
-                    <input type="radio" id="20k" name="amount" value="20000" onclick="document.getElementById('manual-input').value = this.value" required>
+                    <input type="radio" id="20k" name="nominal" value="20000" onclick="document.getElementById('manual-input').value = this.value" required>
                     <label for="20k" class="nominasi-text">20K</label>
 
-                    <input type="radio" id="50k" name="amount" value="50000" onclick="document.getElementById('manual-input').value = this.value" required>
+                    <input type="radio" id="50k" name="nominal" value="50000" onclick="document.getElementById('manual-input').value = this.value" required>
                     <label for="50k" class="nominasi-text">50K</label>
 
-                    <input type="radio" id="100k" name="amount" value="100000" onclick="document.getElementById('manual-input').value = this.value" required>
+                    <input type="radio" id="100k" name="nominal" value="100000" onclick="document.getElementById('manual-input').value = this.value" required>
                     <label for="100k" class="nominasi-text">100K</label>
 
-                    <input type="radio" id="lainnya" name="amount" value="Lainnya" onclick="document.getElementById('manual-input').value = this.value" required>
+                    <input type="radio" id="lainnya" name="nominal" onclick="toggleManualInput(true)" required>
                     <label for="lainnya" class="nominasi-text">Lainnya</label>
                 </div>
                 <div id="manual-input-container" class="mt-2">
-                    <input type="number" id="manual-input" placeholder="Masukkan nominal yang ingin Anda berikan" class="w-100" required>
+                    <input type="number" name="nominal" id="manual-input" placeholder="Masukkan nominal yang ingin Anda berikan" class="w-100" required>
                 </div>
         </div>
         <div class="inputan_nama-email d-flex mb-4 gap-3">
             <div class="inputan_nama w-100 mr-4">
                 <label for="nama">Nama Anda</label><br>
-                <input class="w-100 input-text" type="text" placeholder="Contoh: Ahmad Ibrahim" required>
+                <input class="w-100 input-text" type="text" name="nama_donatur" placeholder="Contoh: Ahmad Ibrahim" required>
             </div>
             <div class="inputan_nama w-100">
-                <label for="nama">Alamat Email Anda</label><br>
-                <input class="w-100 input-text" type="text" placeholder="Contoh: anda@gmail.com" required>
+                <label for="email">Alamat Email Anda</label><br>
+                <input class="w-100 input-text" type="email" name="email" placeholder="Contoh: anda@gmail.com" required>
             </div>
         </div>
         <div class="inputan_kontak-pembayaran d-flex mb-4 gap-3 align-items-center">
             <div class="inputan_kontak w-100">
-                <label for="nama">Nomor Kontak</label><br>
-                <input class="w-100 input-text" type="text" placeholder="Contoh: 081234567890" required>
+                <label for="nomor_kontak">Nomor Kontak</label><br>
+                <input class="w-100 input-text" type="text" name="telephone" placeholder="Contoh: 081234567890" required>
             </div>
             <div class="inputan_pembayaran w-100">
                 <table class="w-100">
                     <tr>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-dana.png" alt="dana"></td>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-gopay.png" alt="dana"></td>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-ovo.png" alt="dana"></td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="dana" value="dana" required>
+                            <label for="dana" class="pembayaran-label">
+                                <img src="../assets/image/icon-dana.png" alt="Dana" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="gopay" value="gopay" required>
+                            <label for="gopay" class="pembayaran-label">
+                                <img src="../assets/image/icon-gopay.png" alt="Gopay" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="ovo" value="ovo" required>
+                            <label for="ovo" class="pembayaran-label">
+                                <img src="../assets/image/icon-ovo.png" alt="OVO" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-qris.png" alt="dana"></td>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-sakuku.png" alt="dana"></td>
-                        <td><input type="radio" name="pembayaran" id="input-pembayaran" value="dana" required><img src="../assets/image/icon-shopeePay.png" alt="dana"></td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="qris" value="qris" required>
+                            <label for="qris" class="pembayaran-label">
+                                <img src="../assets/image/icon-qris.png" alt="QRIS" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="sakuku" value="sakuku" required>
+                            <label for="sakuku" class="pembayaran-label">
+                                <img src="../assets/image/icon-sakuku.png" alt="Sakuku" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
+                        <td class="pembayaran-option">
+                            <input type="radio" name="metode_pembayaran" id="shopeePay" value="shopeePay" required>
+                            <label for="shopeePay" class="pembayaran-label">
+                                <img src="../assets/image/icon-shopeePay.png" alt="ShopeePay" class="pembayaran-icon" style="width: 100px;">
+                            </label>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -78,7 +108,7 @@
         <div class="simple-message text-light top-100">
             <h4 class="title-simple-message">Setiap Donasi adalah Tetesan Harapan bagi Palestina</h4>
             <p class="parag-simple-message">
-            Setiap rupiah yang Anda berikan bukan hanya sekadar angka, melainkan wujud nyata dari kepedulian dan cinta kasih Anda untuk saudara-saudara kita di Palestina. Bersama-sama, kita bisa membantu meringankan beban mereka dan memberikan harapan untuk masa depan yang lebih baik. Mari wujudkan perubahan, satu donasi pada satu waktu. Jadikan kontribusi Anda sebagai bagian dari langkah besar menuju kehidupan yang lebih damai dan sejahtera bagi mereka yang membutuhkan. Ayo, satukan hati, satukan langkah, dan donasikan sekarang untuk Palestina!
+                Setiap rupiah yang Anda berikan bukan hanya sekadar angka, melainkan wujud nyata dari kepedulian dan cinta kasih Anda untuk saudara-saudara kita di Palestina. Bersama-sama, kita bisa membantu meringankan beban mereka dan memberikan harapan untuk masa depan yang lebih baik. Mari wujudkan perubahan, satu donasi pada satu waktu. Jadikan kontribusi Anda sebagai bagian dari langkah besar menuju kehidupan yang lebih damai dan sejahtera bagi mereka yang membutuhkan. Ayo, satukan hati, satukan langkah, dan donasikan sekarang untuk Palestina!
             </p>
         </div>
     </div>

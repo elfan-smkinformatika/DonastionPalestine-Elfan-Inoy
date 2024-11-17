@@ -374,8 +374,7 @@ hr{
     border: 2px solid #ffc5a8;
     outline: #f26722;
 }
-
-.input-text:not(:placeholder-shown), textarea:not(:placeholder-shown) {
+.input-text:not(:placeholder-shown), textarea:not(:placeholder-shown), #manual-input:not(:placeholder-shown) {
     border: 2px solid #FC6D10;
 }
 
@@ -454,3 +453,4 @@ label{
 .parag-simple-message{
     font-size: 10px;
 }
+
