@@ -15,5 +15,6 @@
         die("Query gagal: " . mysqli_error($conn));
     } else {
         echo "Donasi berhasil ditambahkan. Terima kasih atas kontribusi Anda!";
+        header("Location: ../pages/terimakasih.php");
     }
 ?>

@@ -1,3 +1,7 @@
+<?php
+require_once "include/connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,16 +57,43 @@
     <div id="tentang-kami" class="paddtop">
         <div class="container py-5 position-relative">
             <!-- pop laporan -->
+            <?php
+            // Ambil data total donasi dan target dari database
+            $queryTotalDonasi = "SELECT SUM(nominal) AS total_donasi FROM donatur";
+            $resultTotalDonasi = mysqli_query($conn, $queryTotalDonasi);
+            $rowTotalDonasi = mysqli_fetch_assoc($resultTotalDonasi);
+            $totalDonasi = $rowTotalDonasi['total_donasi'] ?? 0; // Jika NULL, maka set ke 0
+
+            // Tentukan target donasi (misal Rp 10.000.000)
+            $targetDonasi = 10000000;
+
+            // Hitung persentase
+            $persentase = ($totalDonasi / $targetDonasi) * 100;
+            $persentase = $persentase > 100 ? 100 : $persentase; // Batas maksimal 100%
+            ?>
             <div class="pop-laporan text-light rounded-3 p-4 position-absolute end-0">
                 <h1 class="tagline-laporan">Dukungan Anda Telah Terkumpul untuk Palestina!</h1>
                 <p>Bersama, kita kuat. Setiap kontribusi Anda membawa harapan.</p>
                 <div class="line-statistic">
-                    <span class="progress-text">Rp. 2.000.000 / Rp. 10.000.000</span>
+                    <!-- Menampilkan jumlah donasi terkumpul dan target -->
+                    <span class="progress-text">
+                        Rp. <?= number_format($totalDonasi, 0, ',', '.') ?> / Rp. <?= number_format($targetDonasi, 0, ',', '.') ?>
+                    </span>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                        <!-- Menampilkan progres bar dengan lebar sesuai persentase -->
+                        <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: <?= $persentase ?>%;"
+                            aria-valuenow="<?= $persentase ?>"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                            <?= round($persentase, 2) ?>%
+                        </div>
                     </div>
                 </div>
             </div>
+
             <!-- end pop laporan -->
             <h4 class="title-page mb-5">Tentang Kami</h4>
             <div class="d-flex d-">
@@ -256,7 +287,7 @@
             </div>
         </div>
         <hr>
-        
+
     </div>
     <!-- End Footer -->
     <!-- Script -->
