@@ -1,6 +1,6 @@
 <h1>Daftar Donatur</h1>
-<table class="table">
-    <thead>
+<table class="table fade-in">
+    <thead class="slide-in">
         <td>ID Donatur</td>
         <td>Nama Donatur</td>
         <td>Email</td>
@@ -19,8 +19,11 @@
             $telephone = $data['telephone'];
             $total_donasi = $data['total_donasi'];
             $jumlah_donasi = $data['jumlah_donasi'];
+
+            // Tentukan kelas berdasarkan indeks
+            $rowClass = ($index % 2 == 0) ? 'fade-in-row-left' : 'fade-in-row-right';
         ?>
-            <tr>
+            <tr class="<?= $rowClass ?>">
                 <td><?= $id_donatur ?></td>
                 <td><?= $nama_donatur ?></td>
                 <td><?= $email ?></td>
@@ -29,6 +32,7 @@
                 <td><?= $jumlah_donasi ?></td>
             </tr>
         <?php
+            $index++; // Increment indeks
         }
         ?>
     </tbody>

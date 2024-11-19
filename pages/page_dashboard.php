@@ -42,7 +42,7 @@
                 ?>
                 <h2>Rp. <?= number_format($rowTotal['total_donasi']) ?></h2>
             </div>
-            <div class="card-dashboard slide-in">
+            <div class="card-dashboard fade-in-row-right">
                 <p class="title-card-dashboard">Total Donasi Bulan Ini</p>
                 <?php
                 $queryTotalMoon = "SELECT SUM(nominal) AS total_donasi_bulan_ini FROM donatur WHERE MONTH(give_at) = $selectedMonth";
@@ -81,7 +81,7 @@
         </div>
 
         <div class="d-flex gap-3 mt-3 w-100">
-            <div class="chart">
+            <div class="chart fade-in-row-left">
                 <canvas id="myChart"></canvas>
             </div>
             <div class="program-donasi">

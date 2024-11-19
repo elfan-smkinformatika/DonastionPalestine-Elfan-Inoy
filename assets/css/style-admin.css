@@ -154,8 +154,38 @@
     animation: fadeIn 1s ease-in;
 }
 
+.fade-in-row {
+    opacity: 0;
+    animation: fadeInRow 1s forwards;
+}
+
+@keyframes fadeInRow {
+    0% {
+        opacity: 0;
+        transform: translateX(50%); /* Muncul dari kanan */
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .slide-in {
-    animation: slideIn 1s ease-in;
+    animation: slideIn 5s ease-in forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(200px); /* Muncul dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .zoom-in {
@@ -167,17 +197,6 @@
         opacity: 0;
     }
     to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -247,4 +266,74 @@
 
 #bulan select:hover {
     transform: scale(1.02); /* Efek sedikit membesar saat hover */
+}
+
+/* Animasi untuk baris dari kiri */
+.fade-in-row-left {
+    opacity: 0;
+    animation: fadeInRowLeft 5s forwards;
+}
+
+@keyframes fadeInRowLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%); /* Muncul dari kiri */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi untuk baris dari kanan */
+.fade-in-row-right {
+    opacity: 0;
+    animation: fadeInRowRight 3s forwards;
+}
+
+@keyframes fadeInRowRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%); /* Muncul dari kanan */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Gaya untuk form pencarian */
+.search-form {
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.search-container {
+    position: relative; /* Untuk posisi ikon */
+}
+
+.search-container input[type="text"] {
+    width: 100%; /* Lebar penuh */
+    padding: 10px 40px; /* Padding untuk input */
+    border-radius: 6px; /* Sudut melengkung */
+    border: 1px solid #ccc; /* Border abu-abu */
+    font-size: 1rem; /* Ukuran font */
+    transition: border-color 0.3s; /* Transisi untuk border */
+}
+
+.search-container input[type="text"]:focus {
+    outline: none; /* Menghilangkan outline default */
+    border-color: #ffc107; /* Warna border saat fokus */
+}
+
+/* Gaya untuk tombol pencarian */
+.search-container button {
+    position: absolute; /* Posisi absolut untuk ikon */
+    left: 10px; /* Jarak dari kiri */
+    top: 50%; /* Vertikal tengah */
+    transform: translateY(-50%); /* Pusatkan secara vertikal */
+    background: none; /* Tanpa latar belakang */
+    border: none; /* Tanpa border */
+    cursor: pointer; /* Kursor pointer */
+    color: #ffc107; /* Warna ikon */
+    font-size: 1.2rem; /* Ukuran font untuk ikon */
 }

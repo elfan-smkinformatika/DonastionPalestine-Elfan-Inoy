@@ -110,9 +110,13 @@
                     <h4><i class="fas fa-credit-card hover-icon"></i> Metode Pembayaran yang Tersedia</h4>
                     <p>Beberapa metode pembayaran yang sering digunakan oleh para donatur kami:</p>
                     <div class="d-flex flex-wrap">
-                        <img src="../assets/image/icon-dana.png" alt="Dana" width="150px" class="m-2">
-                        <img src="../assets/image/icon-ovo.png" alt="OVO" width="150px" class="m-2">
-                        <img src="../assets/image/icon-gopay.png" alt="GOPAY" width="150px" class="m-2">
+                        <img src="assets/image/icon-dana.png" alt="Dana" width="150px" class="m-2">
+                        <img src="assets/image/icon-ovo.png" alt="OVO" width="150px" class="m-2">
+                        <img src="assets/image/icon-gopay.png" alt="GOPAY" width="150px" class="m-2">
+                        <img src="assets/image/icon-qris.png" alt="GOPAY" width="150px" class="m-2">
+                        <img src="assets/image/icon-sakuku.png" alt="GOPAY" width="150px" class="m-2">
+                        <img src="assets/image/icon-shopeePay.png" alt="GOPAY" width="150px" class="m-2">
+
                     </div>
                 </div>
             </div>
