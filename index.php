@@ -216,25 +216,46 @@ require_once "include/connection.php";
     <!-- Script -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script>
-        let currentIndex = 10; // Jumlah data yang terlihat
-        document.getElementById('load-more').addEventListener('click', function() {
-            const container = document.getElementById('card-container');
-            // Tambahkan data dari server jika ada (disimulasikan di sini)
-            for (let i = 1; i <= 10; i++) {
-                const card = document.createElement('div');
-                card.className = 'card-donatur';
-                card.innerHTML = `
-                    <div class="name_no-donatur">
-                        <p class="no-donatur">${currentIndex + i}</p>
-                        <h1 class="name-donatur">Donatur ${currentIndex + i}</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.${Math.floor(Math.random() * 1000) * 1000}</h4>
-                        <p class="msg-donatur">Pesan donatur ${currentIndex + i}</p>
-                    </div>`;
-                container.appendChild(card);
-            }
-            currentIndex += 10;
+        let currentIndex = 10; // Data awal yang sudah ditampilkan
+        const loadMoreButton = document.getElementById('load-more');
+        const container = document.getElementById('card-container');
+
+        loadMoreButton.addEventListener('click', function() {
+            // Kirim permintaan ke server untuk mendapatkan data baru
+            fetch('load_more.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `offset=${currentIndex}&limit=10`, // Kirim offset dan limit
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        // Tambahkan data ke halaman
+                        data.forEach(item => {
+                            const card = document.createElement('div');
+                            card.className = 'card-donatur';
+                            card.innerHTML = `
+                        <div class="name_no-donatur">
+                            <p class="no-donatur">#${item.id_donatur}</p>
+                            <h1 class="name-donatur">${item.nama_donatur}</h1>
+                        </div>
+                        <div class="count_msg">
+                            <h4 class="count-donatur">Telah Berdonasi Rp.${parseInt(item.nominal).toLocaleString()}</h4>
+                            <p class="msg-donatur">${item.pesan}</p>
+                        </div>`;
+                            container.appendChild(card);
+                        });
+
+                        // Update indeks data terakhir
+                        currentIndex += data.length;
+                    } else {
+                        // Jika tidak ada data lagi, sembunyikan tombol
+                        loadMoreButton.style.display = 'none';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
         });
     </script>
 </body>
