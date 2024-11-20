@@ -11,14 +11,15 @@ require_once "include/connection.php";
     <title>Harapan Palestina di Tangan Kita | 2024 Tahun Berbagi</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/image/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-nav py-3 shadow-sm fixed-top">
         <div class="container-fluid">
-            <img src="" alt="">
-            <a class="navbar-brand fw-bold" href="../DonastionPalestine-Elfan-Inoy/">FreeFreePalestine</a>
+            <img src="assets/image/favicon.png" alt="" width="60px">
+            <a class="navbar-brand fw-bold" href="../DonastionPalestine-Elfan-Inoy/">SanadPalestine</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +35,7 @@ require_once "include/connection.php";
                         <a class="nav-link" href="#program-donasi">Program Donasi</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#donasi-diterima">Program Donasi</a>
+                        <a class="nav-link" href="#donasi-diterima">Donasi yang Diterima</a>
                     </li>
                 </ul>
             </div>
@@ -269,16 +270,16 @@ require_once "include/connection.php";
     <!-- Start Footer -->
     <div id="footer" class="paddtop">
         <div class="container d-flex">
-            <div class="image-owner">
+            <!-- <div class="image-owner">
                 <img src="assets/image/" alt="Elfan">
                 <img src="assets/image/" alt="Inoyy">
-            </div>
+            </div> -->
             <div class="navbar-footer">
                 <h3>Navbar</h3>
                 <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#tentang-kami">Tentang Kami</a></li>
-                <li><a href="">Program Donasi</a></li>
-                <li><a href="">Transparasi Donatur</a></li>
+                <li><a href="#program-donasi">Program Donasi</a></li>
+                <li><a href="#donasi-diterima">Donasi yang Diterima</a></li>
             </div>
             <div class="contact-footer">
                 <h3>Hubungi Kami</h3>
