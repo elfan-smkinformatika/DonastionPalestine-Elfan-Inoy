@@ -19,7 +19,7 @@ require_once "include/connection.php";
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-nav py-3 shadow-sm fixed-top">
         <div class="container-fluid">
             <img src="assets/image/favicon.png" alt="" width="60px">
-            <a class="navbar-brand fw-bold" href="../DonastionPalestine-Elfan-Inoy/">SanadPalestine</a>
+            <a class="navbar-brand fw-bold" href="../DonastionPalestine-Elfan-Inoy/">FreeFreePalestine</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -154,117 +154,39 @@ require_once "include/connection.php";
             <h1 class="title-page">Donasi yang Diterima</h1>
         </div>
         <div class="container-cards">
-            <!-- Start Cards Scroll 1 -->
-            <!-- Start Donatur1 -->
-            <div class="cards-slide">
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">1</p>
-                        <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
+            <div class="container">
+                <div id="card-container" class="container-cards">
+                    <?php
+                    // Query untuk mendapatkan data donasi
+                    $queryDonatur = "SELECT id_donatur, nama_donatur, nominal, pesan FROM donatur";
+                    $resultDonatur = mysqli_query($conn, $queryDonatur);
+
+                    // Periksa jika data ditemukan
+                    if (mysqli_num_rows($resultDonatur) > 0) {
+                        // Iterasi data dari hasil query
+                        while ($data = mysqli_fetch_assoc($resultDonatur)) {
+                            echo "
+                        <div class='card-donatur'>
+                            <div class='name_no-donatur'>
+                                <p class='no-donatur'>#{$data['id_donatur']}</p>
+                                <h1 class='name-donatur'>{$data['nama_donatur']}</h1>
+                            </div>
+                            <div class='count_msg'>
+                                <h4 class='count-donatur'>Telah Berdonasi Rp." . number_format($data['nominal'], 0, ',', '.') . "</h4>
+                                <p class='msg-donatur'>{$data['pesan']}</p>
+                            </div>
+                        </div>";
+                        }
+                    } else {
+                        echo "<p class='text-center'>Belum ada donasi yang diterima.</p>";
+                    }
+                    ?>
                 </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">2</p>
-                        <h1 class="name-donatur">Rizki Fajar</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.150.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">3</p>
-                        <h1 class="name-donatur">Aisyah Nur</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.100.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">4</p>
-                        <h1 class="name-donatur">Fajar Nugraha</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.250.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">5</p>
-                        <h1 class="name-donatur">Rahmat Hidayat</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.300.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
+                <button id="load-more" class="load-more">Load More</button>
             </div>
-            <!-- End Donatur1 -->
-            <!-- Start Donatur2 -->
-            <div class="cards-slide">
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">1</p>
-                        <h1 class="name-donatur">Ackmad Elfan Purnama</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.200.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">2</p>
-                        <h1 class="name-donatur">Rizki Fajar</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.150.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">3</p>
-                        <h1 class="name-donatur">Aisyah Nur</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.100.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">4</p>
-                        <h1 class="name-donatur">Fajar Nugraha</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.250.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-                <div class="card-donatur m-2">
-                    <div class="name_no-donatur d-flex">
-                        <p class="no-donatur">5</p>
-                        <h1 class="name-donatur">Rahmat Hidayat</h1>
-                    </div>
-                    <div class="count_msg">
-                        <h4 class="count-donatur">Telah Berdonasi Rp.300.000</h4>
-                        <p class="msg-donatur">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste iusto consequatur a tenetur! Ducimus amet odit hic et omnis.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Donatur2 -->
         </div>
     </div>
+
     <!-- End Donasi Diterima -->
 
     <!-- Start Footer -->

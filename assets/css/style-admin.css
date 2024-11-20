@@ -95,6 +95,46 @@
     overflow-y: auto;
 }
 
+/* Style untuk elemen select */
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ffd249;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadInSelect 1s ease-in;
+    outline: none;
+}
+
+/* Hover effect */
+select:hover {
+    background-color: #fdfbd1;
+    border-color: #ffd249;
+    box-shadow: 0 0 10px #ffd249;
+}
+
+/* Style untuk opsi (tambahan opsional) */
+select option {
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Animasi fade-in */
+@keyframes fadInSelect {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 .card-dashboard {
     width: 30%;
     height: 180px;
@@ -129,6 +169,7 @@
     border-radius: 20px;
     height: auto;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 2s ease-in-out;
 }
 
 .img-program {
@@ -192,6 +233,10 @@
     animation: zoomIn 1s ease-in;
 }
 
+.fadeUp {
+    animation: fadeUp 5s ease-in-out;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -208,6 +253,21 @@
     }
     to {
         transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    95% {
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -300,6 +360,21 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(100%); /* Muncul dari kanan */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeindown{
+    animation: fadeInDown 2s ease-in-out;
 }
 
 /* Gaya untuk form pencarian */

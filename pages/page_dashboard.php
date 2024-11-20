@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Donasi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-
 </head>
-
 <body>
     <div class="container main-side">
         <h3 class="mb-5">Laporan Terkumpulnya Donasi</h3>
@@ -33,7 +25,7 @@
         </form>
 
         <div class="row1 d-flex gap-3 flex-wrap">
-            <div class="card-dashboard fade-in">
+            <div class="card-dashboard fadeindown">
                 <p class="title-card-dashboard">Total Donasi Seluruhnya</p>
                 <?php
                 $queryTotal = "SELECT SUM(nominal) AS total_donasi FROM donatur";
@@ -42,8 +34,8 @@
                 ?>
                 <h2>Rp. <?= number_format($rowTotal['total_donasi']) ?></h2>
             </div>
-            <div class="card-dashboard fade-in-row-right">
-                <p class="title-card-dashboard">Total Donasi Bulan Ini</p>
+            <div class="card-dashboard fadeUp">
+                <p class="title-card-dashboard">Total Pemasukan Bulan <?= $months[$selectedMonth] ?></p>
                 <?php
                 $queryTotalMoon = "SELECT SUM(nominal) AS total_donasi_bulan_ini FROM donatur WHERE MONTH(give_at) = $selectedMonth";
                 $resultTotalMoon = mysqli_query($conn, $queryTotalMoon);
@@ -54,29 +46,18 @@
                 $querySelisih = "SELECT SUM(nominal) AS selisih_nominal FROM donatur WHERE MONTH(give_at) = $selectedMonth - 1";
                 $resultSelisih = mysqli_query($conn, $querySelisih);
                 $rowSelisih = mysqli_fetch_assoc($resultSelisih);
+                $selisih = $rowTotalMoon['total_donasi_bulan_ini'] - $rowSelisih['selisih_nominal'];
                 ?>
-                <p>+Rp. <?= number_format($rowSelisih['selisih_nominal']) ?> adalah selisih nominal dari bulan kemarin</p>
+                <p><?= $selisih > 0 ? '+' : '-' ?>Rp. <?= number_format(abs($selisih)) ?> adalah selisih nominal dari bulan kemarin</p>
             </div>
             <div class="card-dashboard zoom-in">
-                <p class="title-card-dashboard">Total Donatur</p>
+                <p class="title-card-dashboard">Total Orang yang Pernah Berdonasi</p>
                 <?php
-                $queryTotalDonatur = "SELECT COUNT(DISTINCT nama_donatur) AS total_donatur FROM donatur";
-                $resultTotalDonatur = mysqli_query($conn, $queryTotalDonatur);
-                $rowTotalDonatur = mysqli_fetch_assoc($resultTotalDonatur);
+                $queryTotalOrang = "SELECT COUNT(DISTINCT nama_donatur) AS total_orang FROM donatur";
+                $resultTotalOrang = mysqli_query($conn, $queryTotalOrang);
+                $rowTotalOrang = mysqli_fetch_assoc($resultTotalOrang);
                 ?>
-                <h2><?= $rowTotalDonatur['total_donatur'] ?></h2>
-                <?php
-                $queryBulanIni = "SELECT COUNT(DISTINCT nama_donatur) AS jumlah_orang_bulan_ini FROM donatur WHERE MONTH(give_at) = $selectedMonth";
-                $resultBulanIni = mysqli_query($conn, $queryBulanIni);
-                $rowBulanIni = mysqli_fetch_assoc($resultBulanIni);
-
-                $queryBulanKemarin = "SELECT COUNT(DISTINCT nama_donatur) AS jumlah_orang_bulan_kemarin FROM donatur WHERE MONTH(give_at) = $selectedMonth - 1";
-                $resultBulanKemarin = mysqli_query($conn, $queryBulanKemarin);
-                $rowBulanKemarin = mysqli_fetch_assoc($resultBulanKemarin);
-
-                $selisihOrang = $rowBulanIni['jumlah_orang_bulan_ini'] - $rowBulanKemarin['jumlah_orang_bulan_kemarin'];
-                ?>
-                <p>Selisih orang yang berdonasi menambah <?= $selisihOrang ?> orang</p>
+                <h2><?= $rowTotalOrang['total_orang'] ?></h2>
             </div>
         </div>
 
@@ -86,10 +67,32 @@
             </div>
             <div class="program-donasi">
                 <h1>Program Donasi</h1>
-                <div class="card-program d-flex fade-in">
-                    <img class="img-program" src="" alt="">
+                <div class="card-program d-flex zoom-in">
+                    <img class="img-program" src="assets/image/gaza-berbagimakanan.png" alt="">
                     <div>
                         <h3 class="title-program">Bantuan Pangan dan Gizi</h3>
+                        <p class="status">Status: Aktif</p>
+                    </div>
+                </div>
+                <div class="card-program d-flex zoom-in">
+                    <img class="img-program" src="assets/image/gaza-kesehatan.png" alt="">
+                    <div>
+                        <h3 class="title-program">Layanan Kesehatan dan Medis</h3>
+                        <p class="status">Status: Aktif</p>
+                    </div>
+                </div>
+                <div class="card-program d-flex zoom-in">
+                    <img class="img-program" src="assets/image/gaza-pendidikan.png" alt="">
+                    <div>
+                        <h3 class="title-program">Pendidikan dan Masa Depan Anak-Anak</h3>
+                        <p class="status">Status: Aktif</p>
+                    </div>
+                </div>
+                <div class="card-program d-flex zoom-in">
+                    <img class="img-program" src="assets/image/gaza-crisiAir.jpeg" alt="">
+                    <div>
+                        <h3 class="title-program">Program Pembangunan Infrastruktur Air dan Sanitasi
+                        </h3>
                         <p class="status">Status: Aktif</p>
                     </div>
                 </div>

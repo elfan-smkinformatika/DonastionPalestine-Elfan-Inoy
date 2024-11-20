@@ -7,6 +7,7 @@
     <title>Halaman Form Donasi</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/image/favicon.png" type="image/x-icon">
 </head>
 
 <body class="d-flex">
