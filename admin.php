@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("location: pages/login_admin.php");
 }
 // Mengambil data dari session
-$id = $_SESSION["id_admin"];
+// $id = $_SESSION["id_admin"];
 $username = $_SESSION["username"];
 $name = $_SESSION["name"];
 $jabatan = $_SESSION["jabatan"];
